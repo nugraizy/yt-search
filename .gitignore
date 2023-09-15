@@ -19,3 +19,5 @@ post.response
 
 # ignore lockfile
 package-lock.json
+
+.env

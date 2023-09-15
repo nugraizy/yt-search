@@ -2,15 +2,14 @@
   "name": "yt-search",
   "version": "2.10.4",
   "description": "search youtube",
-  "main": "dist/yt-search.js",
+  "main": "src/index.js",
   "bin": {
     "yt-search": "bin/cli.js",
     "yt-search-video": "bin/mpv_video.sh",
     "yt-search-audio": "bin/mpv_audio.sh"
   },
   "files": [
-    "bin/**.*",
-    "dist/yt-search.js"
+    "src"
   ],
   "scripts": {
     "debug": "debug=1 node src/index.js --silent",
