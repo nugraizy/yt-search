@@ -589,9 +589,9 @@ function _parseSearchResultInitialData ( responseText, callback )
             const duration = _parseDuration( lengthText || '0:00' )
 
             const description = (
-              ( _jp.query( item, '$..detailedMetadataSnippets..snippetText..text' ) ).join( '' ) ||
-              ( _jp.query( item, '$..description..text' ) ).join( '' ) ||
-              ( _jp.query( item, '$..descriptionSnippet..text' ) ).join( '' )
+              ( _jp.query( item, '$..detailedMetadataSnippets..snippetText..text' ) ).join( '\n' ) ||
+              ( _jp.query( item, '$..description..text' ) ).join( '\n' ) ||
+              ( _jp.query( item, '$..descriptionSnippet..text' ) ).join( '\n' )
             )
 
             // url ( playlist )
@@ -793,9 +793,9 @@ function _parseSearchResultInitialData ( responseText, callback )
             const watchCount = Number( watchingLabel.split( /\s+/ )[ 0 ].split( /[,.]/ ).join( '' ).trim() )
 
             const description = (
-              ( _jp.query( item, '$..detailedMetadataSnippets..snippetText..text' ) ).join( '' ) ||
-              ( _jp.query( item, '$..description..text' ) ).join( '' ) ||
-              ( _jp.query( item, '$..descriptionSnippet..text' ) ).join( '' )
+              ( _jp.query( item, '$..detailedMetadataSnippets..snippetText..text' ) ).join( '\n' ) ||
+              ( _jp.query( item, '$..description..text' ) ).join( '\n' ) ||
+              ( _jp.query( item, '$..descriptionSnippet..text' ) ).join( '\n' )
             )
 
             const scheduledEpochTime = (
@@ -966,10 +966,10 @@ function _parseVideoInitialData ( responseText, callback )
   const title = _parseVideoMeataDataTitle( idata )
 
   const description = (
-    ( _jp.query( idata, '$..description..text' ) ).join( '' ) ||
-    ( _jp.query( ipdata, '$..description..simpleText' ) ).join( '' ) ||
-    ( _jp.query( ipdata, '$..microformat..description..simpleText' ) ).join( '' ) ||
-    ( _jp.query( ipdata, '$..videoDetails..shortDescription' ) ).join( '' )
+    ( _jp.query( idata, '$..description..text' ) ).join( '\n' ) ||
+    ( _jp.query( ipdata, '$..description..simpleText' ) ).join( '\n' ) ||
+    ( _jp.query( ipdata, '$..microformat..description..simpleText' ) ).join( '\n' ) ||
+    ( _jp.query( ipdata, '$..videoDetails..shortDescription' ) ).join( '\n' )
   )
 
   const author_name = (
